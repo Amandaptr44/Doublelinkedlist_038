@@ -20,7 +20,7 @@ public:
 	bool search(int rollNo, Node** previous, Node** current);
 	bool deleteNode(int rollNo);
 	bool listEmpty();
-	void asceding();
+	void ascending();
 	void descending();
 	void hapus();
 	void searchData();
@@ -147,10 +147,65 @@ void DoubleLinkedList::addNode() {
 	void DoubleLinkedList::searchData() {
 		if (listEmpty() == true) {
 			cout << "\nlist is empty" << endl;
+
 		}
 		Node* prev, * curr;
 		prev = curr = NULL;
 		cout << "\nEnter the roll number of the student whose record you want to search: ";
-		
+		int num;
+		cin >> num;
+		if (DoubleLinkedList::search(num, &prev, &curr) == false)
+			cout << "\nrecord not found" << endl;
+		else {
+			cout << "\nrecord found" << endl;
+			cout << "\nroll number: " << curr->noMhs << endl;
+			cout << "\nname : " << curr->name << endl;
+		}
+	}
+
+	int main() {
+		DoubleLinkedList obj;
+		while (true) {
+			try {
+				cout << "\nmenu" << endl;
+				cout << "\n1. add a record to the list" << endl;
+				cout << "\n2. delete a record from the list" << endl;
+				cout << "\n3. view all records in the ascending order of roll numbers" << endl;
+				cout << "\n4. view all records in the descending order of roll numbers" << endl;
+				cout << "\n5. search for a record in the list" << endl;
+				cout << "\n6. exit" << endl;
+				cout << "\nenter yout choise (1-6): ";
+				char ch;
+				cin >> ch;
+
+				switch (ch) {
+				case '1':
+					obj.addNode();
+					break;
+				case '2':
+					obj.hapus();
+					break;
+				case '3':
+					obj.ascending();
+					break;
+				case '4':
+					obj.descending();
+					break;
+				case '5':
+					obj.searchData();
+					break;
+				case '6':
+					return 0;
+				default:
+					cout << "\nInvalid option" << endl;
+					break;
+
+				}
+			}
+			catch (exception& e) {
+				cout << "Check for the values entered." << endl;
+			}
+		}
+	}
 
 

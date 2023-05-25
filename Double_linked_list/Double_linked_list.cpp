@@ -80,5 +80,8 @@ void DoubleLinkedList::addNode() {
 		return (*current != NULL);
 	}
 
+	bool DoubleLinkedList::deleteNode(int rollNo) {
+		
+	}
 
 

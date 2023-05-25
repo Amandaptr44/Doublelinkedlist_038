@@ -144,3 +144,13 @@ void DoubleLinkedList::addNode() {
 		else
 			cout << "Record with roll number " << rollNo << "deleted" << endl;
 	}
+	void DoubleLinkedList::searchData() {
+		if (listEmpty() == true) {
+			cout << "\nlist is empty" << endl;
+		}
+		Node* prev, * curr;
+		prev = curr = NULL;
+		cout << "\nEnter the roll number of the student whose record you want to search: ";
+		
+
+

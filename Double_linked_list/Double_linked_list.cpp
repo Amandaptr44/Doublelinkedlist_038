@@ -86,6 +86,8 @@ void DoubleLinkedList::addNode() {
 		if (search(rollNo, &previous, &current) == false)
 			return false;
 
+		if (current->next != NULL)
+			current->next->prev = previous;
 	}
 
 

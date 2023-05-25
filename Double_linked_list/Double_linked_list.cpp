@@ -97,4 +97,7 @@ void DoubleLinkedList::addNode() {
 		return true;
 	}
 
+	bool DoubleLinkedList::listEmpty() {
+		return (START == NULL);
+	}
 

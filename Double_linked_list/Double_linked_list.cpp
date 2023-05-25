@@ -2,5 +2,11 @@
 #include <string>
 using namespace std;
 
-class Node; 
+class Node {
+public:
+	int noMhs;
+	string nama;
+	Node* next;
+	Node* prev;
+};
 
